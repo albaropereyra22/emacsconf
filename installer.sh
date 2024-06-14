@@ -18,6 +18,6 @@ git clone $repoUrl ~/${fileName};
 mkdir -p ~/.emacs.d;
 touch ~/.emacs.d/.emacs-custom.el;
 # TODO update based on uname
-mv ~/${fileName}/WSL2Init.el ~/.emacs.d;
+mv ~/${fileName}/WSL2Init.el ~/.emacs.d/init.el;
 rm -rf ~/${fileName};
 printf "Emacs conf has been updated.\n";
