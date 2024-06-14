@@ -15,7 +15,7 @@
 
 ;;; Install required pacakages
 ; Create a list of packages to install if not already installed
-(setq package-list '(zenburn-theme jdee ensime xclip php-mode sbt-mode hydra))
+(setq package-list '(zenburn-theme magit jdee ensime xclip php-mode sbt-mode hydra))
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
