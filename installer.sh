@@ -3,16 +3,16 @@
 if [ "X-h" = "X$1" ];
 then
   cat<<EOF;
-help stuff.
+usage: $0 h:
 EOF
   exit 0;
 fi
 
 # Variables
-repoUrl="https://github.com/albaropereyra/emacsconf";
+repoUrl="https://github.com/AlbaroPereyra22/emacsconf";
 fileName=${repoUrl##*/};
 
-
+rm -rf ~/${fileName}
 git clone $repoUrl ~/${fileName};
 # Creates a directory if it does not exist
 mkdir -p ~/.emacs.d;
