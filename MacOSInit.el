@@ -48,8 +48,9 @@
  version-control t)       ; use versioned backups
 
 ;;; Add line numbers to buffer
-(add-hook 'prog-mode-hook 'linum-mode)
-  (setq linum-format "%4d \u2502 ")
+; this setting changed in the latest emacs version
+;(add-hook 'prog-mode-hook 'linum-mode)
+;  (setq linum-format "%4d \u2502 ")
 
 ;;; Add file sets menu
 (filesets-init)
