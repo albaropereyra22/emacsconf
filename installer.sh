@@ -19,5 +19,9 @@ mkdir -p ~/.emacs.d;
 touch ~/.emacs.d/.emacs-custom.el;
 # TODO update based on uname
 mv ~/${fileName}/WSL2Init.el ~/.emacs.d/init.el;
+if [ "X$(uname -s)" = "XDarwin" ];
+then
+  mv ~/${fileName}/MacOSInit.el ~/.emacs.d/init.el;
+fi
 rm -rf ~/${fileName};
 printf "Emacs conf has been updated.\n";
