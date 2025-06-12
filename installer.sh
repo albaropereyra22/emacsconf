@@ -11,6 +11,8 @@ fi
 # Variables
 repoUrl="https://github.com/AlbaroPereyra22/emacsconf";
 fileName=${repoUrl##*/};
+uname=$(uname -r)
+WSL2=${uname##*-}
 
 rm -rf ~/${fileName}
 git clone $repoUrl ~/${fileName};
@@ -18,8 +20,10 @@ git clone $repoUrl ~/${fileName};
 mkdir -p ~/.emacs.d;
 touch ~/.emacs.d/.emacs-custom.el;
 # TODO update based on uname
-mv ~/${fileName}/WSL2Init.el ~/.emacs.d/init.el;
-if [ "X$(uname -s)" = "XDarwin" ];
+if [ "X$WSL2" = "XWSL2" ];
+then
+  mv ~/${fileName}/WSL2Init.el ~/.emacs.d/init.el;
+elif [ "X$(uname -s)" = "XDarwin" ];
 then
   mv ~/${fileName}/MacOSInit.el ~/.emacs.d/init.el;
 fi
